@@ -1,0 +1,38 @@
+#include <iostream>
+#include <stdio.h>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    float b[1000], c[1000], d[1000],n;
+    char a[1000][30];
+    cout << "Masukkan banyak barang yang ingin dibeli = ";
+    cin >> n;
+    cout << endl << endl;
+    for (int i=0;i<n;i++) {
+        cout << "Data ke-"<<i+1<<endl;
+        cout << "Nama Barang\t= ";
+        scanf (" %[^\n]s",a[i]);
+        cout << "Harga Barang\t= ";
+        cin >> b[i];
+        cout << "Diskon (dalam persen)\t= ";
+        cin >> c[i];
+        }
+
+    cout<<"Output:\n\n";
+    cout<<"=================================================================\n";
+    cout<<"|  No  |           Nama           |  Harga  |  Diskon |  Total  |\n";
+    cout<<"=================================================================\n";
+    
+    for(int i=0;i<n;i++){
+        cout<<"| "<<setiosflags(ios::left)<<setw(5)<<i+1<<"|";
+        cout<<" "<<setiosflags(ios::left)<<setw(25)<<a[i]<<"|";
+        cout<<" "<<setiosflags(ios::left)<<setw(8)<<b[i]<<"|";
+        cout<<" "<<setiosflags(ios::left)<<setw(8)<<(c[i]/100)*b[i]<<"|";
+        cout<<" "<<setiosflags(ios::left)<<setw(8)<<b[i]-((c[i]/100)*b[i])<<"|";
+        cout<<"\n=================================================================\n";
+        }
+        
+     return 0;    
+}
